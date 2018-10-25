@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    var text = document.getElementsByClassName('fex');
+    var photo = document.getElementsByClassName('imas');
+
+    text[0].style.opacity="1";
+    photo[0].style.opacity="1";
+    text[1].style.opacity="0";
+    photo[1].style.opacity="0";
+    text[2].style.opacity="0";
+    photo[2].style.opacity="0";
+
+    function swap(z) {
+      for (var i = 0; i < text.length; i++) {
+        text[i].style.opacity = "0";
+        photo[i].style.opacity = "0";
+      }
+      text[z].style.opacity = "1";
+      photo[z].style.opacity = "1";
+    }
+    var pos=0;
+    function autochange(){
+      if (pos>= text.length) {
+        pos=0;
+
+      }
+      swap(pos);
+      pos++;
+
+    }
+    setInterval(autochange,7000);
+  </script>
